@@ -13,7 +13,7 @@ open class SecurityConfig : WebSecurityConfigurerAdapter {
 
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
-            .antMatchers("/").permitAll()
+            .antMatchers("/", "/api/health").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin().permitAll()

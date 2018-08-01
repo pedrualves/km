@@ -1,16 +1,13 @@
 package com.kwm.controllers
 
+import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
-@RestController
+@Controller
 @RequestMapping("/")
 class MainController {
 
-    data class Message(val code: Int, val message: String)
-
     @GetMapping()
-    fun index(): Message {
-        return Message(0, "OK")
-    }
+    fun index(): String = "index"
 
 }
